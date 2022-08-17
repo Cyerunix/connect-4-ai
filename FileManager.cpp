@@ -7,7 +7,7 @@ FileManager::FileManager(const std::string& filename)
 
 void FileManager::readAIData(AI & ai)
 {
-	std::map<std::array<std::array<std::int8_t, Board::NUM_COLS>, Board::NUM_ROWS>, std::map<std::uint8_t, std::uint8_t>> data;
+	std::map<Board::BoardType, std::map<std::uint8_t, std::uint8_t>> data;
 	char currentChar = -2;
 	
 	//Open the input file
@@ -23,7 +23,7 @@ void FileManager::readAIData(AI & ai)
 	bool reading = true;
 	while (!input.eof()) {
 		//Read the board that is mapped to the priority data
-		std::array<std::array<std::int8_t, Board::NUM_COLS>, Board::NUM_ROWS> currentBoard;
+		Board::BoardType currentBoard;
 		for (size_t x = 0; x < currentBoard.size(); x++) {
 			//Store the current row being read
 			std::array<std::int8_t, Board::NUM_COLS> currentRow;
@@ -97,7 +97,7 @@ void FileManager::writeAIData(AI & ai)
 	}
 
 	//Create a variable to hold all of the data we are going to write
-	std::map<std::array<std::array<std::int8_t, Board::NUM_COLS>, Board::NUM_ROWS>, std::map<std::uint8_t, std::uint8_t>> dataToWrite = ai.getData();
+	std::map<Board::BoardType, std::map<std::uint8_t, std::uint8_t>> dataToWrite = ai.getData();
 
 	//Loop through all of the pairs of boards and priorities within the map
 	for (auto& boardsAndPrioritiesPair : dataToWrite) {

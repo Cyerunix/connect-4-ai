@@ -24,7 +24,7 @@ public:
 	@param pieceToUse The piece that the AI will be playing with (either RED_PIECE or YELLOW_PIECE)
 	@param data The data to recall
 	*/
-	AI(const std::int8_t& pieceToUse, const std::map<std::array<std::array<std::int8_t, Board::NUM_COLS>, Board::NUM_ROWS>, std::map<std::uint8_t, std::uint8_t>>& data);
+	AI(const std::int8_t& pieceToUse, const std::map<Board::BoardType, std::map<std::uint8_t, std::uint8_t>>& data);
 
 	~AI();
 

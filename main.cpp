@@ -1,12 +1,11 @@
 #include <iostream>
 #include <string>
 #include <conio.h>
-#include <ctime>
-#include <chrono>
 #include "Board.h"
 #include "AI.h"
 #include "Random.h"
 #include "FileManager.h"
+#include <bitset>
 
 int main(int argc, char* argv) {
 	//Create a board
