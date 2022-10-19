@@ -32,7 +32,8 @@ int main(int argc, char* argv) {
 	std::uint8_t numMoves = 0;
 
 	bool running = true;
-
+	
+	//Code for checking efficiency
 	/*std::vector<std::chrono::milliseconds> times;
 
 	std::chrono::milliseconds start, end;
